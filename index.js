@@ -1,7 +1,7 @@
  async function getWeather() {
       const apiKey = "WeatherRepoert";
       const city = document.getElementById("cityIn").value;
-      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20499cac3b2affa2a903af4884204de0`;
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=20499cac3b2affa2a903af4884204de0&units=metric`;
 
 
       try {
@@ -12,7 +12,7 @@
 
         document.querySelector(".td").innerHTML = `
           <p class="inline-block text-[1rem]">City: ${data.name}</p>
-          <p class="inline-block text-[1rem]">/Temperature: ${Math.round(data.main.temp/10)} °C</p>
+          <p class="inline-block text-[1rem]">/Temperature: ${Math.round(data.main.temp)} °C</p>
           <p class="text-[.9rem]">Weather: ${data.weather[0].description}</p>
         `;
         if(data.weather[0].description=='clear sky'){
